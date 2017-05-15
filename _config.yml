@@ -3,12 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Cobb's home
+title: Jacob's home
 subtitle: 
-description: thinking aloud.
-author: xieqiupeng
+description: 
+author: Jacob
 language: zh-CN
 timezone: Asia/Shanghai
+email: 654104254@qq.com
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
