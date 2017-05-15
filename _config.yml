@@ -66,7 +66,7 @@ disqus_shortname:
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: material
+theme: indigo
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
