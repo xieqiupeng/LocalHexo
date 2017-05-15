@@ -1,4 +1,4 @@
----
+﻿---
 title: about
 date: 2017-02-21 13:30:05
 tags:
@@ -35,26 +35,3 @@ tags:
         <th>标准错误输出</th>
     </tr>
 </table>
-技 能：
-
-| :-------------- | :------------ |  :------------ |  :------------ |
-| Android&Java    |	熟练	     |SQL|	精通|
-| JavaScript	| 熟练	| C	| 忘了-__-！|
-
-
-+ 精通 markdown
-+ 精通 android dagger MVP架构
-+ 精通 databinding 及 MVVM架构
-+ 精通 googlesamples，熟悉谷歌support库
-+ 熟悉 gradle脚本
-+ 擅长groovy语法
-+ 精通GVR，熟悉ExoPlayer
-+ 精通发布jitpack，熟悉jcenter，maven
-+ 熟悉git开发，SourceTree
-+ 精通UI开发及动画
-+ 了解android源码，熟悉framework/base/media 模块
-+ 了解OpenGL
-+ 了解git bash及git语法
-
-
-
