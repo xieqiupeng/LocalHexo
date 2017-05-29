@@ -1,11 +1,11 @@
---¶àµÄ28¼þ
+ï»¿--å¤šçš„28ä»¶
 
 
---¾ÖÉó²é²¿ÃÅµÄÃ÷Ï¸±í
+--å±€å®¡æŸ¥éƒ¨é—¨çš„æ˜Žç»†è¡¨
 select * from codedata 
-where codetype = 'ÓÅÏÈÉó²é²¿ÃÅÃû³Æ';
+where codetype = 'ä¼˜å…ˆå®¡æŸ¥éƒ¨é—¨åç§°';
 
---Ã÷Ï¸±íÐÂsql3096
+--æ˜Žç»†è¡¨æ–°sql3096
 SELECT gl.shenqingh,
        gl.shenqingrlx,
        gl.shengfendm,
@@ -40,21 +40,21 @@ SELECT gl.shenqingh,
               '2',
               x.renyuanxm,
               '3',
-              w.shenchayxm) as renyuanxm, --³õÉóºÏ¸ñÈÕÆÚ¡¢
-       gx.gongburq, --¹«²¼ÈÕÆÚ
-       gx.jinrussrq, -- ½øÈëÊµÉóÈÕÆÚ
-       sab.sstar, --ÊµÉêÌá°¸ÈÕ
-       gx.yitongfwr, --Ò»Í¨·¢ÎÄÈÕÆÚ
+              w.shenchayxm) as renyuanxm, --åˆå®¡åˆæ ¼æ—¥æœŸã€
+       gx.gongburq, --å…¬å¸ƒæ—¥æœŸ
+       gx.jinrussrq, -- è¿›å…¥å®žå®¡æ—¥æœŸ
+       sab.sstar, --å®žç”³ææ¡ˆæ—¥
+       gx.yitongfwr, --ä¸€é€šå‘æ–‡æ—¥æœŸ
        gl.anjianzt,
-       ajzt.codename as anjianzt_mc, --Ê×´Î½á°¸ÈÕ
-       gx.chuanlx, --Ê×´Î½á°¸ÀàÐÍ
-       calx.codename as calxmc, --³ö°¸Ãû³Æ
+       ajzt.codename as anjianzt_mc, --é¦–æ¬¡ç»“æ¡ˆæ—¥
+       gx.chuanlx, --é¦–æ¬¡ç»“æ¡ˆç±»åž‹
+       calx.codename as calxmc, --å‡ºæ¡ˆåç§°
        gl.chuzhengbm,
        czbm.chuzhengbmmc as chuzhengbm_mc,
        gb.codename as guobie_mc,
-       qh.gjxzqhmc as shengfendm_mc, --¼Ó¿ì°¸¼þÉó²éÔ±½ÓÊÕÈÕ
+       qh.gjxzqhmc as shengfendm_mc, --åŠ å¿«æ¡ˆä»¶å®¡æŸ¥å‘˜æŽ¥æ”¶æ—¥
        gl.feiyongbh,
-       decode(gl.feiyongclbj, '1', 'ÊÇ', '·ñ') as feiyongclbj,
+       decode(gl.feiyongclbj, '1', 'æ˜¯', 'å¦') as feiyongclbj,
        blfs.codename as banlifs_mc
   FROM gl_yxsc_ajscb gl
  inner join gg_zlx_zhu zhu
@@ -70,7 +70,7 @@ SELECT gl.shenqingh,
   left join gl_yxsc_sclxpzb gs
     on gs.qingqiulxdm = gl.youxianscqqlx
   left join codedata zllx
-    on zllx.codetype = 'ÓÅÏÈÉó²é×¨ÀûÀàÐÍ'
+    on zllx.codetype = 'ä¼˜å…ˆå®¡æŸ¥ä¸“åˆ©ç±»åž‹'
    AND zllx.CODEVALUE = gl.zhuanlilx
   left join codedata blfs
     on blfs.codetype = 'GL_JIAKUAI_BANLIFS'
@@ -79,13 +79,13 @@ SELECT gl.shenqingh,
     on sqrlx.codetype = 'GL_JIAKUAI_SQRLX'
    and sqrlx.codevalue = gl.shenqingrlx
   left join codedata gb
-    on gb.codetype = '»ù±¾´úÂë£¨¹ú¼ÒºÍµØÇø´úÂë£©'
+    on gb.codetype = 'åŸºæœ¬ä»£ç ï¼ˆå›½å®¶å’Œåœ°åŒºä»£ç ï¼‰'
    AND gb.CODEVALUE = gl.guobie
   left join codedata ajzt
-    on ajzt.codetype = '[¹«¹²]°¸¼þ×´Ì¬´úÂë'
+    on ajzt.codetype = '[å…¬å…±]æ¡ˆä»¶çŠ¶æ€ä»£ç '
    AND ajzt.CODEVALUE = gl.anjianzt
   left join codedata calx
-    on calx.codetype = '[·¢Ã÷ÊµÉó]³ö°¸ÀàÐÍ'
+    on calx.codetype = '[å‘æ˜Žå®žå®¡]å‡ºæ¡ˆç±»åž‹'
    AND calx.CODEVALUE = gx.chuanlx
   left join zpt_sjwh_gjxzqh qh
     on qh.gjxzqhdm = gl.shengfendm
@@ -119,15 +119,15 @@ SELECT gl.shenqingh,
     SELECT c.SHENQINGH FROM GL_YXSC_AJSCTJB C)
 
 
---Ã÷Ï¸±í¾Ésql3096
+--æ˜Žç»†è¡¨æ—§sql3096
 SELECT gl.gl_yxsc_ajscb_id,
-       gl.shenqingh, --È¡¹Ì»¯
-       gl.zhuanlilx, --È¡¹Ì»¯
+       gl.shenqingh, --å–å›ºåŒ–
+       gl.zhuanlilx, --å–å›ºåŒ–
        zhu.zhuanlimc,
-       gl.shenqingrlx, --È¡¹Ì»¯
+       gl.shenqingrlx, --å–å›ºåŒ–
        gl.youxianscbh,
-       gl.youxianscqqlx, --È¡¹Ì»¯
-       gl.youxianscfs, --È¡¹Ì»¯
+       gl.youxianscqqlx, --å–å›ºåŒ–
+       gl.youxianscfs, --å–å›ºåŒ–
        gl.youxiansccjrq,
        gbb.bumc,
        gbb.chumc,
@@ -136,12 +136,12 @@ SELECT gl.gl_yxsc_ajscb_id,
        gx.chushenhgr,
        gx.shishenscjar,
        gl.guobie,
-       gl.shengfendm, --È¡¹Ì»¯
+       gl.shengfendm, --å–å›ºåŒ–
        gx.jkajscyjsr,
        gl.zhufenlh,
-       gl.banlifs, --È¡¹Ì»¯
+       gl.banlifs, --å–å›ºåŒ–
        gx.huianrq,
-       gl.querensj, --È¡¹Ì»¯
+       gl.querensj, --å–å›ºåŒ–
        zllx.codename       as zhuanlilx_mc,
        sqrlx.codename      as shenqingrlx_mc,
        gs.qingqiulxmc      as youxianscqqlx_mc,
@@ -154,21 +154,21 @@ SELECT gl.gl_yxsc_ajscb_id,
               '2',
               x.renyuanxm,
               '3',
-              w.shenchayxm) as renyuanxm, --³õÉóºÏ¸ñÈÕÆÚ¡¢
-       gx.gongburq, --¹«²¼ÈÕÆÚ
-       gx.jinrussrq, -- ½øÈëÊµÉóÈÕÆÚ
-       sab.sstar, --ÊµÉêÌá°¸ÈÕ
-       gx.yitongfwr, --Ò»Í¨·¢ÎÄÈÕÆÚ
+              w.shenchayxm) as renyuanxm, --åˆå®¡åˆæ ¼æ—¥æœŸã€
+       gx.gongburq, --å…¬å¸ƒæ—¥æœŸ
+       gx.jinrussrq, -- è¿›å…¥å®žå®¡æ—¥æœŸ
+       sab.sstar, --å®žç”³ææ¡ˆæ—¥
+       gx.yitongfwr, --ä¸€é€šå‘æ–‡æ—¥æœŸ
        gl.anjianzt,
-       ajzt.codename as anjianzt_mc, --Ê×´Î½á°¸ÈÕ
-       gx.chuanlx, --Ê×´Î½á°¸ÀàÐÍ
-       calx.codename as calxmc, --³ö°¸Ãû³Æ
+       ajzt.codename as anjianzt_mc, --é¦–æ¬¡ç»“æ¡ˆæ—¥
+       gx.chuanlx, --é¦–æ¬¡ç»“æ¡ˆç±»åž‹
+       calx.codename as calxmc, --å‡ºæ¡ˆåç§°
        gl.chuzhengbm,
        czbm.chuzhengbmmc as chuzhengbm_mc,
        gb.codename as guobie_mc,
-       qh.gjxzqhmc as shengfendm_mc, --¼Ó¿ì°¸¼þÉó²éÔ±½ÓÊÕÈÕ
+       qh.gjxzqhmc as shengfendm_mc, --åŠ å¿«æ¡ˆä»¶å®¡æŸ¥å‘˜æŽ¥æ”¶æ—¥
        gl.feiyongbh,
-       decode(gl.feiyongclbj, '1', 'ÊÇ', '·ñ') as feiyongclbj,
+       decode(gl.feiyongclbj, '1', 'æ˜¯', 'å¦') as feiyongclbj,
        blfs.codename as banlifs_mc
   FROM gl_yxsc_ajscb gl
  inner join gg_zlx_zhu zhu
@@ -184,7 +184,7 @@ SELECT gl.gl_yxsc_ajscb_id,
   left join gl_yxsc_sclxpzb gs
     on gs.qingqiulxdm = gl.youxianscqqlx
   left join codedata zllx
-    on zllx.codetype = 'ÓÅÏÈÉó²é×¨ÀûÀàÐÍ'
+    on zllx.codetype = 'ä¼˜å…ˆå®¡æŸ¥ä¸“åˆ©ç±»åž‹'
    AND zllx.CODEVALUE = gl.zhuanlilx
   left join codedata blfs
     on blfs.codetype = 'GL_JIAKUAI_BANLIFS'
@@ -193,13 +193,13 @@ SELECT gl.gl_yxsc_ajscb_id,
     on sqrlx.codetype = 'GL_JIAKUAI_SQRLX'
    and sqrlx.codevalue = gl.shenqingrlx
   left join codedata gb
-    on gb.codetype = '»ù±¾´úÂë£¨¹ú¼ÒºÍµØÇø´úÂë£©'
+    on gb.codetype = 'åŸºæœ¬ä»£ç ï¼ˆå›½å®¶å’Œåœ°åŒºä»£ç ï¼‰'
    AND gb.CODEVALUE = gl.guobie
   left join codedata ajzt
-    on ajzt.codetype = '[¹«¹²]°¸¼þ×´Ì¬´úÂë'
+    on ajzt.codetype = '[å…¬å…±]æ¡ˆä»¶çŠ¶æ€ä»£ç '
    AND ajzt.CODEVALUE = gl.anjianzt
   left join codedata calx
-    on calx.codetype = '[·¢Ã÷ÊµÉó]³ö°¸ÀàÐÍ'
+    on calx.codetype = '[å‘æ˜Žå®žå®¡]å‡ºæ¡ˆç±»åž‹'
    AND calx.CODEVALUE = gx.chuanlx
   left join zpt_sjwh_gjxzqh qh
     on qh.gjxzqhdm = gl.shengfendm
@@ -232,18 +232,18 @@ SELECT gl.gl_yxsc_ajscb_id,
 and gl.youxianscqqrq >= '20120801' and gl.youxianscqqrq <= '20130831'
 
 
---Í¬Òå´Ê
+--åŒä¹‰è¯
 create or replace public synonym GL_YXSC_AJSCTJB
 for GL_YXSC_AJSCTJB 
 
---µ¼ÈëÊý¾Ý´ÓÍ³¼Æ¿âµ½²âÊÔ¿â
+--å¯¼å…¥æ•°æ®ä»Žç»Ÿè®¡åº“åˆ°æµ‹è¯•åº“
 insert into GL_YXSC_AJSCTJB
 select * from GL_YXSC_AJSCTJB@LINK_GLCX_SCZQ_USER;
 
 insert into GL_YXSC_SCJAB
 select * from GL_YXSC_SCJAB@LINK_GLCX_SCZQ_USER;
 
--- Ã÷Ï¸²éÑ¯ÐÂsql3068
+-- æ˜Žç»†æŸ¥è¯¢æ–°sql3068
 SELECT ac.shenqingh,
        ac.shenqingrlx,
        ac.shengfendm,
@@ -259,7 +259,7 @@ SELECT ac.shenqingh,
        gl.youxianscbh,
        gl.feiyongbh,
        gl.anjianzt as cjanjianzt,
-       decode(gl.feiyongclbj, '1', 'ÊÇ', '·ñ') as feiyongclbj,
+       decode(gl.feiyongclbj, '1', 'æ˜¯', 'å¦') as feiyongclbj,
        gs.qingqiulxmc as youxianscqqlx_mc,
        qh.gjxzqhmc as shengfendm_mc,
        scfs.shechafsmc as youxianscfs_mc,
@@ -300,9 +300,9 @@ SELECT ac.shenqingh,
     on gs.qingqiulxdm = gl.youxianscqqlx
   left join zpt_sjwh_gjxzqh qh
     on qh.gjxzqhdm = gl.shengfendm
---´úÂë¼¯
+--ä»£ç é›†
   left join codedata zllx
-    on zllx.codetype = 'ÓÅÏÈÉó²é×¨ÀûÀàÐÍ'
+    on zllx.codetype = 'ä¼˜å…ˆå®¡æŸ¥ä¸“åˆ©ç±»åž‹'
    AND zllx.CODEVALUE = gl.zhuanlilx
   left join codedata blfs
     on blfs.codetype = 'GL_JIAKUAI_BANLIFS'
@@ -311,23 +311,23 @@ SELECT ac.shenqingh,
     on sqrlx.codetype = 'GL_JIAKUAI_SQRLX'
    and sqrlx.codevalue = gl.shenqingrlx
   left join codedata gb
-    on gb.codetype = '»ù±¾´úÂë£¨¹ú¼ÒºÍµØÇø´úÂë£©'
+    on gb.codetype = 'åŸºæœ¬ä»£ç ï¼ˆå›½å®¶å’Œåœ°åŒºä»£ç ï¼‰'
    AND gb.CODEVALUE = gl.guobie
   left join codedata ajzt
-    on ajzt.codetype = '[¹«¹²]°¸¼þ×´Ì¬´úÂë'
+    on ajzt.codetype = '[å…¬å…±]æ¡ˆä»¶çŠ¶æ€ä»£ç '
    AND ajzt.CODEVALUE = gl.anjianzt
  WHERE gl.shanchubj = '0'
    and gl.youxianscqqrq >= '20120801'
    and gl.youxianscqqrq <= '20130831'
 
--- ¶àµÄÄÇÒ»¼þ
+-- å¤šçš„é‚£ä¸€ä»¶
 select s.shanchubj,s.youxiansczt,s.* from gl_yxsc_ajscb s where shenqingh = '2013100013416'
 
 select * from GL_YXSC_AJSCTJB where shenqingh = '2013100013416';
 select * from GL_YXSC_SCJAB where shenqingh = '2013100013416';
 
 
---Ã÷Ï¸²éÑ¯¾Ésql3802
+--æ˜Žç»†æŸ¥è¯¢æ—§sql3802
 SELECT gl.gl_yxsc_ajscb_id,
        gl.shenqingh,
        gl.zhuanlilx,
@@ -350,7 +350,7 @@ SELECT gl.gl_yxsc_ajscb_id,
        qh.gjxzqhmc as shengfendm_mc,
        gl.feiyongbh,
        gl.anjianzt as cjanjianzt,
-       decode(gl.feiyongclbj, '1', 'ÊÇ', '·ñ') as feiyongclbj,
+       decode(gl.feiyongclbj, '1', 'æ˜¯', 'å¦') as feiyongclbj,
        blfs.codename as banlifs_mc,
        gl.chuzhengbm
   FROM gl_yxsc_ajscb gl
@@ -361,7 +361,7 @@ SELECT gl.gl_yxsc_ajscb_id,
   left join gl_yxsc_sclxpzb gs
     on gs.qingqiulxdm = gl.youxianscqqlx
   left join codedata zllx
-    on zllx.codetype = 'ÓÅÏÈÉó²é×¨ÀûÀàÐÍ'
+    on zllx.codetype = 'ä¼˜å…ˆå®¡æŸ¥ä¸“åˆ©ç±»åž‹'
    AND zllx.CODEVALUE = gl.zhuanlilx
   left join codedata blfs
     on blfs.codetype = 'GL_JIAKUAI_BANLIFS'
@@ -370,17 +370,17 @@ SELECT gl.gl_yxsc_ajscb_id,
     on sqrlx.codetype = 'GL_JIAKUAI_SQRLX'
    and sqrlx.codevalue = gl.shenqingrlx
   left join codedata gb
-    on gb.codetype = '»ù±¾´úÂë£¨¹ú¼ÒºÍµØÇø´úÂë£©'
+    on gb.codetype = 'åŸºæœ¬ä»£ç ï¼ˆå›½å®¶å’Œåœ°åŒºä»£ç ï¼‰'
    AND gb.CODEVALUE = gl.guobie
   left join codedata ajzt
-    on ajzt.codetype = '[¹«¹²]°¸¼þ×´Ì¬´úÂë'
+    on ajzt.codetype = '[å…¬å…±]æ¡ˆä»¶çŠ¶æ€ä»£ç '
    AND ajzt.CODEVALUE = gl.anjianzt
   left join zpt_sjwh_gjxzqh qh
     on qh.gjxzqhdm = gl.shengfendm
  WHERE gl.shanchubj = '0'
    and gl.querensj >= '20120801'
    and gl.querensj <= '20130831'
---ºÍÐÂsql±È¶Ô
+--å’Œæ–°sqlæ¯”å¯¹
   and not exists
 (select 1 from 
         (SELECT * FROM 
@@ -396,7 +396,7 @@ SELECT gl.gl_yxsc_ajscb_id,
 where xqp.shenqingh = gl.shenqingh
 );
 
--- Ã÷Ï¸²éÑ¯ÐÂsql
+-- æ˜Žç»†æŸ¥è¯¢æ–°sql
 select ac.SHENQINGH,ac.shenqingrlx,ac.shengfendm,ac.youxianscqqlx,ac.youxianscfs,ac.youxianscqqrq,ac.banlifs,ac.querensj,ac.zhuanlilx
 from 
 (SELECT a.SHENQINGH,a.shenqingrlx,a.shengfendm,a.youxianscqqlx,a.youxianscfs,a.youxianscqqrq,a.banlifs,a.querensj,a.zhuanlilx
@@ -408,14 +408,14 @@ FROM GL_YXSC_AJSCTJB C
 where ac.querensj between 20130801 and 20130831
 
 
--- ÈóÇ®ÐÂsql
+-- æ¶¦é’±æ–°sql
 SELECT B.*
   FROM (SELECT A.*
           FROM GL_YXSC_SCJAB A
         UNION ALL
         SELECT C.*, '', '', '', ''
           FROM GL_YXSC_AJSCTJB C
-         -- Í³¼ÆÔÂ·ÝÊÇËùÔÚµ±ÔÂ
+         -- ç»Ÿè®¡æœˆä»½æ˜¯æ‰€åœ¨å½“æœˆ
          -- WHERE TONGJIND || TONGJIYF = TO_CHAR(SYSDATE, 'YYYYMM')
        ) B
 where B.querensj between 20130801 and 20130831
@@ -427,7 +427,7 @@ delete from GL_YXSC_AJSCTJB
 
 select * from zpt_qxjs_qxdy
 
--- ÓÅÏÈÉó²éÊ×´Î½á°¸Êý¾Ý
+-- ä¼˜å…ˆå®¡æŸ¥é¦–æ¬¡ç»“æ¡ˆæ•°æ®
 select b.shenqingh,
        b.shenqingrlx,
        b.shengfendm,
@@ -450,12 +450,12 @@ select b.shenqingh,
        sc.shuoshuscy,
        sc.shuoshujgid_fk,
        zpt.renyuanxm
-  from -- ÔÚÊµÉó±í²éÑ¯Ê×´Î½á°¸ÈÕ(×îÐ¡ÖÊ¼ì³ö°¸ÈÕ)
+  from -- åœ¨å®žå®¡è¡¨æŸ¥è¯¢é¦–æ¬¡ç»“æ¡ˆæ—¥(æœ€å°è´¨æ£€å‡ºæ¡ˆæ—¥)
        (select ssxh.zhijiancar,
                ssxh.shuoshuscy,
                ssxh.shuoshujgid_fk,
                ssxh.shenqinghao
-        --×éÄÚÅÅÐò
+        --ç»„å†…æŽ’åº
           from (SELECT ROW_NUMBER() OVER(PARTITION BY ss.shenqinghao ORDER BY ss.zhijiancar asc) AS xh,
                        ss.*
                   from ss_scgz_ajscb ss
@@ -479,7 +479,7 @@ select b.shenqingh,
     on zpt.yonghuzh = ss.shuoshuscy
  where b.youxiansczt = '2'
 
--- Î´½á°¸Êý¾Ý
+-- æœªç»“æ¡ˆæ•°æ®
 select b.shenqingh,
        b.shenqingrlx,
        b.shengfendm,
@@ -505,11 +505,11 @@ select b.shenqingh,
   left join gl_cspz_jgdzb gj
     on gj.jigouid_pk = gx.jigoufk
  where b.shenqingh not in
-       ( -- ÓÅÏÈÉó²éÊ×´Î½á°¸ÉêÇëºÅ
+       ( -- ä¼˜å…ˆå®¡æŸ¥é¦–æ¬¡ç»“æ¡ˆç”³è¯·å·
         select b.shenqingh
-          from -- ÔÚÊµÉó±íÓÐÊ×´Î½á°¸ÈÕ(ÖÊ¼ì³ö°¸ÈÕ)µÄÉêÇëºÅ
+          from -- åœ¨å®žå®¡è¡¨æœ‰é¦–æ¬¡ç»“æ¡ˆæ—¥(è´¨æ£€å‡ºæ¡ˆæ—¥)çš„ç”³è¯·å·
                 (select shenqinghao
-                 --×éÄÚÅÅÐò
+                 --ç»„å†…æŽ’åº
                    from (SELECT ROW_NUMBER() OVER(PARTITION BY ss.shenqinghao ORDER BY ss.zhijiancar asc) AS xh,
                                 ss.*
                            from ss_scgz_ajscb ss
@@ -522,7 +522,7 @@ select b.shenqingh,
             on b.shenqingh = sc.shenqinghao
          where b.youxiansczt = '2')
 
--- ½¨Á¢Ê×´Î½á°¸±í
+-- å»ºç«‹é¦–æ¬¡ç»“æ¡ˆè¡¨
 create table GL_YXSC_SCJAB as
 select '2013' as tongjind,
        '12' as tongjiyf,
@@ -557,23 +557,23 @@ select '2013' as tongjind,
 where 1 = 2;
 -- Add comments to the table
 comment on table GL_YXSC_SCJAB is 
-'ÓÅÏÈÉó²éÊ×´Î½á°¸±í';
+'ä¼˜å…ˆå®¡æŸ¥é¦–æ¬¡ç»“æ¡ˆè¡¨';
 -- Add comments to the columns
 comment on column GL_YXSC_SCJAB.tongjind is
-'Í³¼ÆÄê¶È';
+'ç»Ÿè®¡å¹´åº¦';
 comment on column GL_YXSC_SCJAB.tongjiyf is
-'Í³¼ÆÔÂ·Ý';
+'ç»Ÿè®¡æœˆä»½';
 comment on column GL_YXSC_SCJAB.zhijiancar is
-'Ê×´Î½á°¸ÈÕ£¨×îÐ¡ÖÊ¼ì³ö°¸ÈÕ£©';
+'é¦–æ¬¡ç»“æ¡ˆæ—¥ï¼ˆæœ€å°è´¨æ£€å‡ºæ¡ˆæ—¥ï¼‰';
 comment on column GL_YXSC_SCJAB.shuoshuscy is
-'ËùÊôÉó²éÔ±£¨ÓÃ»§ÕÊºÅ£©';
+'æ‰€å±žå®¡æŸ¥å‘˜ï¼ˆç”¨æˆ·å¸å·ï¼‰';
 comment on column GL_YXSC_SCJAB.renyuanxm is
-'ËùÊôÉó²éÔ±Ãû³Æ£¨ÈËÔ±ÐÕÃû£©';
+'æ‰€å±žå®¡æŸ¥å‘˜åç§°ï¼ˆäººå‘˜å§“åï¼‰';
 comment on column GL_YXSC_SCJAB.shuoshujgid_fk is
-'ËùÊô»ú¹¹id';
+'æ‰€å±žæœºæž„id';
 drop table GL_YXSC_AJSCTJB
 
--- ½¨Á¢°¸¼þÉó²éÍ³¼Æ±í
+-- å»ºç«‹æ¡ˆä»¶å®¡æŸ¥ç»Ÿè®¡è¡¨
 create table GL_YXSC_AJSCTJB as
 select '2013' as tongjind,
        '12' as tongjiyf,
@@ -601,18 +601,18 @@ select '2013' as tongjind,
     on gx.shenqingh = b.shenqingh
   left join gl_cspz_jgdzb gj
     on gj.jigouid_pk = gx.jigoufk
--- ²éÑ¯½á¹ûÎª¿Õ
+-- æŸ¥è¯¢ç»“æžœä¸ºç©º
   and 1 = 2;
 -- Add comments to the table 
 comment on table GL_YXSC_AJSCTJB is 
-'°¸¼þÉó²éÍ³¼Æ±í';
+'æ¡ˆä»¶å®¡æŸ¥ç»Ÿè®¡è¡¨';
 -- Add comments to the columns 
 comment on column GL_YXSC_AJSCTJB.tongjiyf is
-'Í³¼ÆÔÂ·Ý';
+'ç»Ÿè®¡æœˆä»½';
 comment on column GL_YXSC_AJSCTJB.tongjind is
-'Í³¼ÆÄê¶È';
+'ç»Ÿè®¡å¹´åº¦';
 
--- ÈóÇ®¾Ésql
+-- æ¶¦é’±æ—§sql
 select 
 --b.querensj,
        b.shenqingh,
@@ -639,12 +639,12 @@ select
 and b.querensj >= '20130801'
 and b.querensj <= '20130831'
 
--- Í³¼Æ¿â£º²éÑ¯ÈóÇ°µÄ±í
--- 107513 admin Í³¼Æ×ÓÏµÍ³ Í³¼ÆÅäÖÃ
+-- ç»Ÿè®¡åº“ï¼šæŸ¥è¯¢æ¶¦å‰çš„è¡¨
+-- 107513 admin ç»Ÿè®¡å­ç³»ç»Ÿ ç»Ÿè®¡é…ç½®
 select * from i_query t where t.uuid='0C1V0MVI6TDD42C5';
-ÓÅÏÈÉó²éµÄÍ³¼Æ±í
+ä¼˜å…ˆå®¡æŸ¥çš„ç»Ÿè®¡è¡¨
 
--- ²éÑ¯ÉêÇëºÅ´íÎó
+-- æŸ¥è¯¢ç”³è¯·å·é”™è¯¯
 select b.shenqingh,
        b.shenqingrlx,
        b.shengfendm,
