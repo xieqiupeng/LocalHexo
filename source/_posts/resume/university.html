@@ -65,10 +65,14 @@
             border-bottom: solid 1px black;
         }
 
-        .qinghuaziguang {
+        .qinghuaziguang, .lagou {
             width: 100%;
             border: solid 0 red;
             display: flex;
+        }
+
+        .lagou .logo img{
+            margin: 15px 25px;
         }
 
         .logo {
@@ -99,12 +103,17 @@
             width: 100%;
         }
 
+        #design{
+            margin-left: 15px;
+            font-size: 10px;
+        }
     </style>
     <script type="text/javascript"></script>
 </head>
 
 <body>
 <div id="edge">
+    <span class="bold">附录1</span>
     <span class="bold">教育背景：</span>
     <div class="btbu">
         <div class="course">
@@ -170,8 +179,7 @@
             2) 数据库课程设计：独立完成一个基于SQL Server2008的纯数据库图书管理系统。<br/>
             熟练掌握存储过程，触发器，权限控制。<br/>
             3) 毕业设计：国家专利审批e系统的功能优化与实现。<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="http://note.youdao.com/share/?id=456aa8b33b1d0a3dc3f3b5f4da9875e8&type=note#/">
+            <a id="design" href="http://note.youdao.com/share/?id=456aa8b33b1d0a3dc3f3b5f4da9875e8&type=note#/">
                 http://note.youdao.com/share/?id=456aa8b33b1d0a3dc3f3b5f4da9875e8&type=note#/
             </a>
         </div>
@@ -180,7 +188,28 @@
     1) 大学担任过两年英语课代表，负责班级的考勤和考试复习资料的整理。<br/>
     2) 参加校英文才艺大赛，获得最佳配音奖。<br/>
     3) 通过大学英语四级, 六级考试。<br/>
+    <br/>
     <span class="bold">其他项目与经历：</span><br/>
+    <div class="lagou">
+        <div class="logo">
+            <img src="lagou.jpg"/>
+        </div>
+        <div class="text">
+            <div class="company">
+                <span class="time">2017.7 ～ 2017.10</span>
+                <span class="job">高级Java开发</span>
+                <br/>
+                培训机构：拉勾网<br/>
+            </div>
+            <div class="key">
+                基础知识：<br/>
+                1) Linux：掌握Shell,Vim,Docker,Gulp<br/>
+                2) 开发：掌握Vertx3.0框架，Freemark模版引擎<br/>
+                3) Java：掌握Java8高阶函数，lambda，Gradle&Grovvy，Kotlin等<br/>
+            </div>
+        </div>
+    </div>
+    <br/>
     <div class="qinghuaziguang">
         <div class="logo">
             <img src="qinghuaziguang.png"/>
@@ -188,7 +217,7 @@
         <div class="text">
             <div class="company">
                 <span class="time">2013.6 ～ 2013.9</span>
-                <span class="job">Web​全栈开发</span>
+                <span class="job">JavaWeb开发</span>
                 <br/>
                 培训机构：紫光软件培训中心<br/>
             </div>
